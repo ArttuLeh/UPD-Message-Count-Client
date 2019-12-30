@@ -44,11 +44,11 @@ int main(int argc, char** argv)
    // create a socket object
     s = socket(AF_INET, SOCK_DGRAM, 0); // ipv4-socket, UDP
     
-    // define listening port for socket (4330 for Arttu Lehtovaara)
+    // define listening port for socket ()
     sockaddr_in server, client; // structure for socket address
-    server.sin_port = htons(4330); // own unic port number
+    server.sin_port = htons("your own port number"); // own unic port number
     server.sin_family = AF_INET; // ipv4 address
-    server.sin_addr.s_addr = inet_addr("193.166.72.3"); // connection from anywhere
+    server.sin_addr.s_addr = inet_addr("localhost"); // connection from anywhere
     bind(s, (sockaddr*)&server, sizeof(server));
     
     // main loop for listening message
